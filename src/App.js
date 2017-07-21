@@ -13,7 +13,8 @@ class App extends Component {
   }
 
   componentDidMount(){
-    LogService.fetchLogs()
+    LogService.fetchLogs().then(logs => this.setState({ logs })
+    )
   }
 
   render() {
