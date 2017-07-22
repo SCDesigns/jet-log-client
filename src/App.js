@@ -18,6 +18,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.logs)
     return (
       <div className="App">
         <h1>Jet Log</h1>
