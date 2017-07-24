@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Logs from './components/Logs'
+import AddLog from './components/AddLog'
 import LogService from './services/LogService'
 import './App.css';
 
@@ -13,12 +14,16 @@ class App extends Component {
   }
 
   componentDidMount(){
-    LogService.fetchLogs().then(logs => this.setState({ logs })
-    )
+    LogService.fetchLogs().then(logs => this.setState({ logs }))
+  }
+
+  addLog = (log) => {
+    LogService.createLog(log).then(log => this.setState({
+      logs: this.state.logs.concat(log)
+    }))
   }
 
   render() {
-    console.log(this.state.logs)
     return (
       <div className="App">
         <h1>Jet Log</h1>
@@ -26,7 +31,7 @@ class App extends Component {
           <Logs logs={this.state.logs}/>
         </div>
         <div className="map">
-          <p>Here</p>
+          <AddLog addLog={this.addLog}/>
         </div>
       </div>
     );
