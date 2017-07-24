@@ -28,10 +28,14 @@ class App extends Component {
       <div className="App">
         <h1>Jet Log</h1>
         <div className="navbar">
-          <Logs logs={this.state.logs}/>
+          <div className="recentLogs">
+            <Logs logs={this.state.logs}/>
+          </div>
+          <div className="addLog">
+            <AddLog addLog={this.addLog}/>
+          </div>
         </div>
         <div className="map">
-          <AddLog addLog={this.addLog}/>
         </div>
       </div>
     );

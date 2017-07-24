@@ -44,7 +44,7 @@ class AddLog extends Component {
           />
 
         <label htmlFor="log_description">Description</label>
-        <input
+        <textarea
             type="text"
             name="description"
             value={this.state.description}

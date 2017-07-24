@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: Ailerons;
 }
 .App > h1 {
   background: #DADCDD;
@@ -7,10 +8,17 @@
   padding: 10px 0;
 }
 .navbar {
-  background: rgba(42,108,205,0.60);
   width: 25vw;
   height: 100vh;
   float: left;
+}
+.addLog {
+  background: rgba(42,108,205,0.60);
+}
+.addLog > label, input, textarea {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
 }
 .map {
   background: #5AC8FA;
