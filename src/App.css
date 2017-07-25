@@ -1,28 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,500');
+
 .App {
   text-align: center;
-  font-family: Ailerons;
+  font-family: 'Roboto', sans-serif;
 }
 .App > h1 {
   background: #DADCDD;
   margin: 0;
   padding: 10px 0;
+  font-weight: 100;
 }
 .navbar {
+  float: left;
   width: 25vw;
   height: 100vh;
-  float: left;
+  font-size: 20px;
+  font-weight: 500;
 }
 .addLog {
-  background: rgba(42,108,205,0.60);
+  background: #42A5F5;
+  color: #FDD835;
 }
-.addLog > label, input, textarea {
+div.addLog > form > label, input, textarea {
+  margin: 10px auto;
   display: block;
   text-align: center;
-  margin: 10px auto;
+  border: none;
+}
+div.addLog > form > input {
+  width: 200px;
+  height: 20px;
+}
+div.addLog > form > textarea {
+  width: 200px;
+  height: 60px;
 }
 .map {
+  float: left;
   background: #5AC8FA;
   width: 75vw;
   height: 100vh;
-  float: left;
 }
