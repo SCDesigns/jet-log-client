@@ -1,7 +1,7 @@
 import React from 'react';
 
   const Logs = ({ logs }) => {
-    const renderLogs = logs.map(log  =>
+    const renderLogs = logs.map(log =>
       <p key={log.id}>{log.title}</p>
     )
 
