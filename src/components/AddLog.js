@@ -1,4 +1,13 @@
 import React, { Component } from 'react';
+import TextField from 'material-ui/TextField';
+import {blueA400} from 'material-ui/styles/colors';
+import RaisedButton from 'material-ui/RaisedButton';
+
+const styles = {
+  underlineStyle: {
+    borderColor: blueA400,
+  },
+};
 
 class AddLog extends Component {
   constructor(props) {
@@ -7,7 +16,6 @@ class AddLog extends Component {
     this.state = {
       title: '',
       description: '',
-      user: '',
       location: '',
     }
   }
@@ -26,42 +34,45 @@ class AddLog extends Component {
     this.setState({
       title: '',
       description: '',
-      user: '',
       location: '',
     })
   }
 
   render() {
     return (
-      <form onSubmit={this.handleOnSubmit}>
-        <label htmlFor="log_title">Title</label>
-        <input
+      <form onSubmit={this.handleOnSubmit} className="center">
+        <h2>New Log</h2>
+        <label htmlFor="log_title" className="block">Title</label>
+        <TextField
             type="text"
             name="title"
             value={this.state.title}
             onChange={this.handleOnChange}
-            placeholder="Log Title"
+            hintText="Log Title"
+            underlineFocusStyle={styles.underlineStyle}
           />
 
-        <label htmlFor="log_description">Description</label>
-        <textarea
+        <label htmlFor="log_description" className="block">Description</label>
+        <TextField
             type="text"
             name="description"
             value={this.state.description}
             onChange={this.handleOnChange}
-            placeholder="Description"
+            hintText="Description"
+            underlineFocusStyle={styles.underlineStyle}
           />
 
-        <label htmlFor="location">Location</label>
-        <input
+        <label htmlFor="log_location" className="block">Location</label>
+        <TextField
             type="text"
             name="location"
             value={this.state.location}
             onChange={this.handleOnChange}
-            placeholder="Location"
+            hintText="Location"
+            underlineFocusStyle={styles.underlineStyle}
           />
 
-          <button>Create New Log</button>
+          <RaisedButton label="Create New Log" type="submit" className="block"/>
       </form>
     )
   }
