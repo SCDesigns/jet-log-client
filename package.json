@@ -3,13 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "core-js": "^2.4.1",
+=======
+>>>>>>> bb85cf384282b556e77a72b57fd0055b8a2cb321
     "material-ui": "^0.18.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.2",
     "react-tap-event-plugin": "^2.0.1",
+<<<<<<< HEAD
     "selenium-standalone": "^6.5.0"
+=======
+    "selenium-standalone": "^6.5.0",
+    "selenium-standalone-painful": "^2.39.0-2.7.0"
+>>>>>>> bb85cf384282b556e77a72b57fd0055b8a2cb321
   },
   "devDependencies": {
     "react-scripts": "1.0.10"

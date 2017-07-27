@@ -20,8 +20,12 @@
 .env.production.local
 
 # Nightwatch Reports
+<<<<<<< HEAD
 /reports
 
+=======
+*/reports
+>>>>>>> bb85cf384282b556e77a72b57fd0055b8a2cb321
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

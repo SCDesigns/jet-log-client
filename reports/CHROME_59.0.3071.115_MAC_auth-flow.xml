@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="2">
+
+  <testsuite name="auth-flow"
+    errors="1" failures="1" hostname="" id="" package="auth-flow" skipped="1"
+    tests="2" time="1.793" timestamp="Thu, 27 Jul 2017 04:11:07 GMT">
+  
+    <testcase name="get to signup page" classname="auth-flow" time="1.793" assertions="2">
+
+      <failure message="Testing if the URL contains &quot;signup&quot;.">    at Object.get to signup page (/Users/Sean/Portfolio/jet-log/client/tests/auth-flow.js:10:19)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
+
+    
+    </testcase>
+  
+
+  
+    <system-err>
+      ERROR: Unable to locate element: &quot;a[href=&quot;/signup&quot; using: css selector
+    at Object.get to signup page (/Users/Sean/Portfolio/jet-log/client/tests/auth-flow.js:8:8)
+    at Module.call (/Users/Sean/.npm-packages/lib/node_modules/nightwatch/lib/runner/module.js:62:34)
+    at /Users/Sean/.npm-packages/lib/node_modules/nightwatch/lib/runner/testcase.js:70:29
+    at _fulfilled (/Users/Sean/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:834:54)
+    at self.promiseDispatch.done (/Users/Sean/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:863:30)
+    at Promise.promise.promiseDispatch (/Users/Sean/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:796:13)
+    at /Users/Sean/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:556:49
+    at runSingle (/Users/Sean/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:137:13)
+    at flush (/Users/Sean/.npm-packages/lib/node_modules/nightwatch/node_modules/q/q.js:125:13)
+    at _combinedTickCallback (internal/process/next_tick.js:131:7)
+    </system-err>
+  
+
+  
+    
+    <testcase
+      name="signup user and redirect to home" classname="auth-flow">
+      <skipped />
+    </testcase>
+    
+  
+  </testsuite>
+</testsuites>

@@ -17,10 +17,10 @@ class App extends Component {
     return (
     <MuiThemeProvider muiTheme={getMuiTheme()}>
       <Router>
-          <div className="App">
-            <Header />
-            <div className="map">Map Here</div>
-          </div>
+        <div className="App">
+          <Header />
+          <div className="map">Map Here</div>
+        </div>
       </Router>
   </MuiThemeProvider>
     );
