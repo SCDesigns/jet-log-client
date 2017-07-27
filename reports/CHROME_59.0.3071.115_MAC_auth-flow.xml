@@ -5,9 +5,9 @@
 
   <testsuite name="auth-flow"
     errors="1" failures="1" hostname="" id="" package="auth-flow" skipped="1"
-    tests="2" time="3.231" timestamp="Wed, 26 Jul 2017 14:56:43 GMT">
+    tests="2" time="1.793" timestamp="Thu, 27 Jul 2017 04:11:07 GMT">
   
-    <testcase name="get to signup page" classname="auth-flow" time="3.231" assertions="2">
+    <testcase name="get to signup page" classname="auth-flow" time="1.793" assertions="2">
 
       <failure message="Testing if the URL contains &quot;signup&quot;.">    at Object.get to signup page (/Users/Sean/Portfolio/jet-log/client/tests/auth-flow.js:10:19)
     at _combinedTickCallback (internal/process/next_tick.js:131:7)</failure>
@@ -35,7 +35,7 @@
   
     
     <testcase
-      name="signup user and redirect to cart" classname="auth-flow">
+      name="signup user and redirect to home" classname="auth-flow">
       <skipped />
     </testcase>
     

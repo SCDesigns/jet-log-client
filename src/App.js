@@ -20,7 +20,7 @@ class App extends Component {
         <MuiThemeProvider muiTheme={getMuiTheme()}>
           <div className="App">
             <Header />
-            <div className="map">
+            <div className="Map">Map Here
             </div>
           </div>
         </MuiThemeProvider>
