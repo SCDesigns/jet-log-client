@@ -5,7 +5,7 @@ import Drawer from 'material-ui/Drawer';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import HomeIcon from 'material-ui/svg-icons/action/home';
-import Delete from 'material-ui/svg-icons/action/delete';
+import PersonAdd from 'material-ui/svg-icons/social/person-add'
 import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
@@ -15,8 +15,8 @@ import LogService from '../services/LogService'
 import {blueA400} from 'material-ui/styles/colors';
 import {red800} from 'material-ui/styles/colors';
 
-const Signup = () => <MenuItem primaryText="Sign-Up" leftIcon={<HomeIcon />} />
-const Home = () => <MenuItem primaryText="Home" leftIcon={<HomeIcon />} />
+const Signup = () => <form className="signup_form"></form>
+const Home = () => <div>Home</div>
 const NotFound = () => <div>NotFound</div>
 
 class Header extends React.Component {
@@ -41,34 +41,38 @@ class Header extends React.Component {
   }
   render() {
     return (
-      <div>
-        <AppBar
-          title='JetLog'
-          className="center"
-          style={{backgroundColor: blueA400}}
-          onLeftIconButtonTouchTap={this.handleToggle}
-        />
-        <Drawer open={this.state.open} width={350}>
-          <IconButton tooltip="Close">
-            <NavigationClose onTouchTap={this.handleToggle} color={blueA400} hoverColor={red800}/>
-          </IconButton>
-          <Divider style={{backgroundColor: blueA400, height: '10px'}} />
+      <Router>
+        <div>
+          <div>
+            <AppBar
+              title='JetLog'
+              className="center"
+              style={{backgroundColor: blueA400}}
+              onLeftIconButtonTouchTap={this.handleToggle}
+            />
+            <Drawer open={this.state.open} width={350}>
+              <IconButton tooltip="Close">
+                <NavigationClose onTouchTap={this.handleToggle} color={blueA400} hoverColor={red800}/>
+              </IconButton>
+              <Divider style={{backgroundColor: blueA400, height: '10px'}} />
 
-          <Menu>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/signup" component={Signup} />
-              <Route component={NotFound} />
-            </Switch>
-          </Menu>
+              <Link to="/signup" ><MenuItem primaryText="Sign Up" leftIcon={<PersonAdd />} /></Link>
+              <Link to="/" ><MenuItem primaryText="Home" leftIcon={<HomeIcon />} /></Link>
 
-          {/* <Divider style={{backgroundColor: blueA400, height: '10px'}} />
-          <Logs logs={this.state.logs}/> */}
+              {/* <Divider style={{backgroundColor: blueA400, height: '10px'}} />
+              <Logs logs={this.state.logs}/> */}
 
-          <Divider style={{backgroundColor: blueA400, height: '10px'}} />
-          <AddLog addLog={this.addLog}/>
-        </Drawer>
-      </div>
+              <Divider style={{backgroundColor: blueA400, height: '10px'}} />
+              <AddLog addLog={this.addLog}/>
+            </Drawer>
+          </div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/signup" component={Signup} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }
