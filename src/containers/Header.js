@@ -12,8 +12,9 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import Logs from '../components/Logs'
 import AddLog from '../components/AddLog'
 import LogService from '../services/LogService'
-import {blueA400} from 'material-ui/styles/colors';
-import {red800} from 'material-ui/styles/colors';
+import {tealA700} from 'material-ui/styles/colors';
+import {amber300} from 'material-ui/styles/colors';
+import {red400} from 'material-ui/styles/colors';
 
 const Signup = () => <form className="signup_form"></form>
 const Home = () => <div>Home</div>
@@ -47,22 +48,23 @@ class Header extends React.Component {
             <AppBar
               title='JetLog'
               className="center"
-              style={{backgroundColor: blueA400}}
+              style={{backgroundColor: tealA700}}
+              titleStyle={{fontSize: '30px'}}
               onLeftIconButtonTouchTap={this.handleToggle}
             />
             <Drawer open={this.state.open} width={350}>
               <IconButton tooltip="Close">
-                <NavigationClose onTouchTap={this.handleToggle} color={blueA400} hoverColor={red800}/>
+                <NavigationClose onTouchTap={this.handleToggle} color={tealA700} hoverColor={red400}/>
               </IconButton>
-              <Divider style={{backgroundColor: blueA400, height: '10px'}} />
+              <Divider style={{backgroundColor: tealA700, height: '10px'}} />
 
-              <Link to="/signup" ><MenuItem primaryText="Sign Up" leftIcon={<PersonAdd />} /></Link>
               <Link to="/" ><MenuItem primaryText="Home" leftIcon={<HomeIcon />} /></Link>
+              <Link to="/signup" ><MenuItem primaryText="Sign Up" leftIcon={<PersonAdd />} /></Link>
 
-              {/* <Divider style={{backgroundColor: blueA400, height: '10px'}} />
+              {/* <Divider style={{backgroundColor: tealA700, height: '10px'}} />
               <Logs logs={this.state.logs}/> */}
 
-              <Divider style={{backgroundColor: blueA400, height: '10px'}} />
+              <Divider style={{backgroundColor: tealA700, height: '10px'}} />
               <AddLog addLog={this.addLog}/>
             </Drawer>
           </div>

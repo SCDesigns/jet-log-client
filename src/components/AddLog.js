@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import TextField from 'material-ui/TextField';
-import {blueA400} from 'material-ui/styles/colors';
+import {amber300} from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
 
 const styles = {
   underlineStyle: {
-    borderColor: blueA400,
+    borderColor: amber300,
   },
 };
 
