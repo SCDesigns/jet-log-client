@@ -16,9 +16,10 @@ import {tealA700} from 'material-ui/styles/colors';
 import {amber300} from 'material-ui/styles/colors';
 import {red400} from 'material-ui/styles/colors';
 
-const Signup = () => <form className="signup_form"></form>
-const Home = () => <div>Home</div>
-const NotFound = () => <div>NotFound</div>
+// custom module imports
+import Home from '../views/Home'
+import Signup from '../views/Signup'
+import NotFound from '../views/NotFound'
 
 class Header extends React.Component {
 
