@@ -60,6 +60,7 @@ class AddLog extends Component {
             onChange={this.handleOnChange}
             hintText="eg: What an amazing few days..."
             underlineFocusStyle={styles.underlineStyle}
+            multiLine={true}
           />
 
         <label htmlFor="log_location" className="block">Location</label>
