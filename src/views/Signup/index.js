@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import TextField from 'material-ui/TextField';
 import {amber300} from 'material-ui/styles/colors';
 import Paper from 'material-ui/Paper';
 import RaisedButton from 'material-ui/RaisedButton';
+
+import { signup } from '../../redux/modules/Auth/actions'
 
 const styles = {
   underlineStyle: {
@@ -47,7 +50,8 @@ class Signup extends Component {
   render() {
     return (
       <Paper style={style} zDepth={2} >
-        <form className="signup_form" method="POST">
+        <form className="signup" method="POST">
+          <h2>Create Account</h2>
           <label htmlFor="name" className="block">Name</label>
           <TextField
               type="name"
@@ -76,7 +80,7 @@ class Signup extends Component {
               hintText="Password"
             />
             <br />
-          <RaisedButton label="Create Account" type="submit" className="block"/>
+          <RaisedButton label="Submit" type="submit" className="block"/>
         </form>
       </Paper>
     )
