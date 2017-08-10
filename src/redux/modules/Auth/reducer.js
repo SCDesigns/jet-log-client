@@ -4,7 +4,7 @@ const initialState = {
   currentUser: {}
 }
 
-export default (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   switch(action.type) {
 
     case 'AUTHENTICATION_REQUEST':
@@ -13,7 +13,7 @@ export default (state = initialState, action) => {
         isAuthenticating: true,
       }
 
-    case 'AUTHENTICATION_REQUEST':
+    case 'AUTHENTICATION_SUCCESS':
       return {
         isAuthenticated: true,
         isAuthenticating: false,
@@ -24,3 +24,5 @@ export default (state = initialState, action) => {
       return state;
   }
 }
+
+export default authReducer;
