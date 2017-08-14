@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// Material-UI Components
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import {amber300} from 'material-ui/styles/colors';
@@ -76,7 +77,7 @@ class Signup extends Component {
             hintText="Password"
           />
           <br />
-        <RaisedButton label="Submit" type="submit" className="block"/>
+        <RaisedButton label="Sign Up" type="submit" className="block"/>
       </form>
     )
   }
