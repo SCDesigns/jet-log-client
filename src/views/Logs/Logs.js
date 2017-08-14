@@ -8,7 +8,7 @@ import { getLogs } from '../../redux/modules/Logs/actions';
 class Logs extends Component {
 
   componentDidMount() {
-    this.props.getLogs();
+    this.props.getLogs()
   }
 
   render() {
@@ -16,6 +16,7 @@ class Logs extends Component {
       <div className="center">
         <h1>My Logs</h1>
         {this.props.logs.map(log => <LogCard key={log.id} log={log} />)}
+        {/* <SurfboardForm /> */}
       </div>
     );
   }
@@ -23,7 +24,7 @@ class Logs extends Component {
 
 const mapStateToProps = (state) => {
   return ({
-    logs: state.logs,
+    logs: state.logs
   })
 }
 
