@@ -36,11 +36,10 @@ export const signup = (userDetails, router) => {
     })
     .then(response => response.json())
     .then(body => {
-      const slug = body.user.email.split("@")[0];
+      // const slug = body.user.email.split("@")[0];
       localStorage.setItem('e.jetlog.token', body.token)
       dispatch(setCurrentUser(body.user));
       dispatch(reset('signup'));
-      router.history.replace(`/users/${slug}`);
     })
     .catch(err => {
       return err;
@@ -48,11 +47,11 @@ export const signup = (userDetails, router) => {
   }
 }
 
-export const login = (userDetails, router) => {
+export const login = (userDetails, history) => {
   return dispatch => {
     dispatch(autheticationRequest)
-    return fetch(`${API_URL}/users`, {
-      method: 'GET',
+    return fetch(`${API_URL}/auth`, {
+      method: 'POST',
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -61,14 +60,14 @@ export const login = (userDetails, router) => {
     })
     .then(response => response.json())
     .then(body => {
-      const slug = body.user.email.split("@")[0];
       localStorage.setItem('e.jetlog.token', body.token)
       dispatch(setCurrentUser(body.user));
-      dispatch(reset('signup'));
-      router.history.replace(`/users/${slug}`);
+      dispatch(reset('login'));
+      history.push('/my-logs')
     })
     .catch(err => {
-      throw new SubmissionError(err)
+      // throw new SubmissionError
+      console.log(err)
     })
   }
 }
