@@ -1,30 +1,25 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-// Material-UI Components
+import { Route, Switch, Link } from 'react-router-dom'
+// Material-UI - Components
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import Divider from 'material-ui/Divider';
 import IconButton from 'material-ui/IconButton';
 import MenuItem from 'material-ui/MenuItem';
-// Nav Icons
+// Material-UI - Nav Icons
 import HomeIcon from 'material-ui/svg-icons/action/home';
 import List from 'material-ui/svg-icons/action/list';
 import NewLog from 'material-ui/svg-icons/communication/location-on';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import PersonAdd from 'material-ui/svg-icons/social/person-add'
-// Colors
+// Material-UI - Colors
 import {amber300} from 'material-ui/styles/colors';
 import {red400} from 'material-ui/styles/colors';
 import {tealA700} from 'material-ui/styles/colors';
-// Custom Module Imports
-import AddLog from './AddLog'
+// Public Route - Welcome
 import Home from '../views/Home'
-import Login from '../views/Login'
-import Logs from '../views/Logs/Logs'
-import NotFound from '../views/NotFound'
-import Signup from '../views/Signup'
-// redux actions
+// Route Manager
+import RouteManager from './RouteManager.js'
 
 class Header extends Component {
   constructor(props) {
@@ -58,7 +53,6 @@ class Header extends Component {
 
             <Divider style={{backgroundColor: tealA700, height: '10px'}} />
 
-            <Router>
               <div>
                 <Link to="/signup"><MenuItem primaryText="Sign Up"
                   leftIcon={<PersonAdd hoverColor={amber300}/>}
@@ -76,14 +70,10 @@ class Header extends Component {
                 <Divider style={{backgroundColor: tealA700, height: '10px'}} />
 
                 <Switch>
-                  <Route exact path="/signup" component={Signup} />
-                  <Route exact path="/login" component={Login} />
-                  <Route exact path="/new-log" component={AddLog} />
-                  <Route exact path="/my-logs" component={Logs} />
-                  <Route component={NotFound} />
+                  <Route exact path="/" component={Home} />
+                  <Route path="/" component={RouteManager} />
                 </Switch>
               </div>
-            </Router>
 
           </Drawer>
         </div>
