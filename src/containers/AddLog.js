@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // Material-UI
-import ContentAdd from 'material-ui/svg-icons/image/add-a-photo';
-import FloatingActionButton from 'material-ui/FloatingActionButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import {amber300} from 'material-ui/styles/colors';
