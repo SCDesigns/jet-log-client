@@ -1,3 +1,4 @@
+import 'isomorphic-fetch';
 import { reset, SubmissionError } from 'redux-form'
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -26,7 +27,9 @@ export const getLogs = () => {
     return fetch(`${API_URL}/logs`)
       .then(response => response.json())
       .then(logs => dispatch(setLogs(logs)))
-      .catch(error => console.log(error))
+      .catch(err => {
+        throw new SubmissionError(err)
+      })
   }
 }
 
@@ -42,9 +45,11 @@ export const createLog = log => {
       .then(response => response.json())
       .then(log => {
         dispatch(addLog(log))
-        // dispatch(resetLogForm())
+        dispatch(resetLogForm())
       })
-      .catch(error => console.log(error))
+      .catch(err => {
+        throw new SubmissionError(err)
+      })
   }
 }
 
