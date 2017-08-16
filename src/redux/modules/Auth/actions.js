@@ -36,13 +36,12 @@ export const signup = (userDetails, router) => {
     })
     .then(response => response.json())
     .then(body => {
-      // const slug = body.user.email.split("@")[0];
       localStorage.setItem('e.jetlog.token', body.token)
       dispatch(setCurrentUser(body.user));
       dispatch(reset('signup'));
     })
     .catch(err => {
-      return err;
+      throw new SubmissionError(err)
     })
   }
 }
@@ -66,8 +65,7 @@ export const login = (userDetails, history) => {
       history.push('/my-logs')
     })
     .catch(err => {
-      // throw new SubmissionError
-      console.log(err)
+      throw new SubmissionError(err)
     })
   }
 }
