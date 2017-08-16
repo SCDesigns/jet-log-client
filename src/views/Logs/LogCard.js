@@ -1,8 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 // Material-UI
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import Toggle from 'material-ui/Toggle';
+import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {tealA700} from 'material-ui/styles/colors';
 
 const LogCard = ({ log }) => (
