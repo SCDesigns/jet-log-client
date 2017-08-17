@@ -10,7 +10,7 @@ import logsReducer from '../modules/Logs/reducer'
 // import headerReducer from '../modules/Header/reducer'
 
 const reducers = combineReducers({
-  authReducer,
+  user: authReducer,
   logs: logsReducer,
 });
 
