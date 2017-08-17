@@ -25,11 +25,11 @@ const addLog = log => {
 export const getLogs = () => {
   return dispatch => {
     return fetch(`${API_URL}/logs`)
-      .then(response => response.json())
-      .then(logs => dispatch(setLogs(logs)))
-      .catch(err => {
-        throw new SubmissionError(err)
-      })
+    .then(response => response.json())
+    .then(logs => dispatch(setLogs(logs)))
+    .catch(err => {
+      throw new SubmissionError(err)
+    })
   }
 }
 
@@ -42,14 +42,14 @@ export const createLog = log => {
       },
       body: JSON.stringify({ log: log })
     })
-      .then(response => response.json())
-      .then(log => {
-        dispatch(addLog(log))
-        dispatch(resetLogForm())
-      })
-      .catch(err => {
-        throw new SubmissionError(err)
-      })
+    .then(response => response.json())
+    .then(log => {
+      dispatch(addLog(log))
+      dispatch(reset('new-log'))
+    })
+    .catch(err => {
+      throw new SubmissionError(err)
+    })
   }
 }
 
