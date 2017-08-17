@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // Material-UI Components
-import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
 import {amber300} from 'material-ui/styles/colors';
-
+// Redux Actions
 import { signup } from '../../redux/modules/Auth/actions'
 
 const styles = {
@@ -37,7 +37,7 @@ class Signup extends Component {
   handleOnSubmit = (event) => {
     event.preventDefault();
     const user = this.state;
-    this.props.signup(user);
+    this.props.signup(user, this.props.history);
     this.setState({
       name: '',
       email: '',
