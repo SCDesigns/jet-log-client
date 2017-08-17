@@ -13,10 +13,9 @@ class Logs extends Component {
 
   render() {
     return (
-      <div className="center">
-        <h1>My Logs</h1>
+      <div>
+        <h1 className="center">My Logs</h1>
         {this.props.logs.map(log => <LogCard key={log.id} log={log} />)}
-        {/* <SurfboardForm /> */}
       </div>
     );
   }
