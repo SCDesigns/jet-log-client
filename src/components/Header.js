@@ -19,7 +19,8 @@ import {tealA700} from 'material-ui/styles/colors';
 // Public Route - Welcome
 import Home from '../views/Home'
 // Route Manager
-import RouteManager from './RouteManager.js'
+import RouteManager from './RouteManager'
+import Avatar from '../containers/Avatar'
 
 class Header extends Component {
   constructor(props) {
@@ -50,6 +51,9 @@ class Header extends Component {
                 hoverColor={red400}
               />
             </IconButton>
+
+
+            <Avatar />
 
             <Divider style={{backgroundColor: tealA700, height: '10px'}} />
 
