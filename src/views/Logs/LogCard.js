@@ -7,6 +7,7 @@ const LogCard = ({ log }) => (
   <Card key={log.id}>
 
     <CardHeader
+      key={log.id}
       title={log.title}
       avatar={log.memory}
       actAsExpander={true}
@@ -15,13 +16,14 @@ const LogCard = ({ log }) => (
     />
 
     <CardMedia
+      key={log.id}
       expandable={true}
       overlay={<CardTitle title={log.title} subtitle={log.location} />}
     >
       <img src={log.memory} alt={log.name} />
     </CardMedia>
 
-    <CardText expandable={true}>
+    <CardText expandable={true} key={log.id}>
       <p>{log.description}</p>
     </CardText>
 
