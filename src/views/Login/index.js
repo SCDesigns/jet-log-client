@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // Material-UI Components
-import TextField from 'material-ui/TextField';
-import {amber300} from 'material-ui/styles/colors';
 import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+// Material-UI Colors
+import {amber300} from 'material-ui/styles/colors';
 
 import { login } from '../../redux/modules/Auth/actions'
 

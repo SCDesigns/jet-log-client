@@ -23,7 +23,7 @@ export const setCurrentUser = user => {
   Async Actions
 */
 
-export const signup = (userDetails, router) => {
+export const signup = (userDetails, history) => {
   return dispatch => {
     dispatch(autheticationRequest)
     return fetch(`${API_URL}/users`, {
@@ -39,6 +39,7 @@ export const signup = (userDetails, router) => {
       localStorage.setItem('e.jetlog.token', body.token)
       dispatch(setCurrentUser(body.user));
       dispatch(reset('signup'));
+      history.push('/my-logs')
     })
     .catch(err => {
       throw new SubmissionError(err)

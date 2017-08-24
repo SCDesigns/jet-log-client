@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
-// Custom Module Imports (Routes)
 // Validator
+import PublicRoutes from '../containers/PublicRoutes';
 import AuthRouteValidator from '../containers/AuthRouteValidator'
 // Public Routes
-import Login from '../views/Login'
-import Signup from '../views/Signup'
 import NotFound from '../views/NotFound'
 
 class RouteManager extends Component {
@@ -13,8 +11,8 @@ class RouteManager extends Component {
 		return (
 			<div>
 				<Switch>
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/login" component={Login} />
+					<Route exact path="/signup" component={PublicRoutes} />
+					<Route exact path="/login" component={PublicRoutes} />
           <Route path="/new-log" component={AuthRouteValidator} />
           <Route path="/my-logs" component={AuthRouteValidator} />
           <Route component={NotFound} />

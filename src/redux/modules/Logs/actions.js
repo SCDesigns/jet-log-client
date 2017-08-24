@@ -21,7 +21,22 @@ const addLog = log => {
   }
 }
 
+const updateLog = log => {
+  return {
+    type: 'UPDATE_LOG_SUCCESS',
+    log
+  }
+}
+
+const destroyLog = id => {
+  return {
+    type: 'DELETE_LOG_SUCCESS',
+    id: id
+  }
+}
+
 // ** Async Actions **
+
 export const getLogs = () => {
   return dispatch => {
     return fetch(`${API_URL}/logs`)
@@ -33,7 +48,7 @@ export const getLogs = () => {
   }
 }
 
-export const createLog = log => {
+export const createLog = (log) => {
   return dispatch => {
     return fetch(`${API_URL}/logs`, {
       method: "POST",
@@ -44,8 +59,9 @@ export const createLog = log => {
     })
     .then(response => response.json())
     .then(log => {
-      dispatch(addLog(log))
-      dispatch(reset('new-log'))
+      dispatch(addLog(log));
+      dispatch(reset('new-log'));
+      
     })
     .catch(err => {
       throw new SubmissionError(err)
@@ -53,20 +69,35 @@ export const createLog = log => {
   }
 }
 
-// export const deleteLog = (log, routerHistory) => {
-//   const id = log.id
-//   return dispatch => {
-//     return LogService.deleteLog(log)
-//       .then(log => {
-//         dispatch(destroyLog(id))
-//         routerHistory.push('/');
-//       })
-//   }
-// }
-//
-// const destroyLog = id => {
-//   return {
-//     type: 'SUCESSFUL_DELETE_LOG',
-//     id: id
-//   }
-// }
+export const editLog = (log, history) => {
+  return dispatch => {
+    return fetch(`${API_URL}/logs/${log.props.id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ log: log })
+    })
+    .then(response => response.json())
+    .then(log => {
+      dispatch(updateLog(log))
+      dispatch(reset('new-log'))
+      history.push('/my-logs')
+    })
+    .catch(err => {
+      throw new SubmissionError(err)
+    })
+  }
+}
+
+export const deleteLog = (log, history) => {
+  return dispatch => {
+    return fetch(`${API_URL}/logs/${log.id}`, {
+      method: "DELETE"
+    })
+      .then(log => {
+        dispatch(destroyLog(log.id))
+        history.push('/my-logs')
+      })
+  }
+}

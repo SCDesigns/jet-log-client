@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 // Material-UI Components
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+// Material-UI Color
 import {amber300} from 'material-ui/styles/colors';
 // Redux Actions
 import { signup } from '../../redux/modules/Auth/actions'

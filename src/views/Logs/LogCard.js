@@ -4,30 +4,30 @@ import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card
 import {tealA700} from 'material-ui/styles/colors';
 
 const LogCard = ({ log }) => (
-  <Card key={log.id}>
+  <div key={log.id}>
+    <Card>
 
-    <CardHeader
-      key={log.id}
-      title={log.title}
-      avatar={log.memory}
-      actAsExpander={true}
-      showExpandableButton={true}
-      iconStyle={{color: tealA700}}
-    />
+      <CardHeader
+        title={log.title}
+        avatar={log.memory}
+        actAsExpander={true}
+        showExpandableButton={true}
+        iconStyle={{color: tealA700}}
+      />
 
-    <CardMedia
-      key={log.id}
-      expandable={true}
-      overlay={<CardTitle title={log.title} subtitle={log.location} />}
-    >
-      <img src={log.memory} alt={log.name} />
-    </CardMedia>
+      <CardMedia
+        expandable={true}
+        overlay={<CardTitle title={log.title} subtitle={log.location} />}
+      >
+        <img src={log.memory} alt={log.name} />
+      </CardMedia>
 
-    <CardText expandable={true} key={log.id}>
-      <p>{log.description}</p>
-    </CardText>
+      <CardText expandable={true}>
+        <p>{log.description}</p>
+      </CardText>
 
-  </Card>
+    </Card>
+  </div>
 )
 
 export default LogCard;
