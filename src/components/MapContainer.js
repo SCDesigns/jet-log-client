@@ -1,14 +1,19 @@
 import React, { Component } from 'react'
 // Google-Maps-React
-import { GoogleApiComponent } from 'google-maps-react';
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
 const GAPI_KEY = process.env.GOOGLE_MAPS_API;
 
-export class Container extends React.Component {
+export class MapContainer extends React.Component {
   render() {
     const style = {
-      width: '100vw',
-      height: '100vh'
+      width: '100%',
+      height: '100%',
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      right: 0,
+      left: 0,
     }
     return (
       <div style={style}>
@@ -19,6 +24,6 @@ export class Container extends React.Component {
   }
 }
 
-export default GoogleApiComponent({
-  apiKey: __GAPI_KEY__
-})(Container)
+export default GoogleApiWrapper({
+  apiKey: (GAPI_KEY)
+})(MapContainer)
