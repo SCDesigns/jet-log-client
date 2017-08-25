@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
-// React-Google-Maps
-import { GoogleMapLoader, GoogleMap, Marker } from 'react-google-maps'
 
-class Map extends Component {
-  render(){
-    return (
-      <div>This the Map Component</div>
-    )
+export class Map extends React.Component {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.google !== this.props.google) {
+      this.loadMap();
+    }
+  }
+
+  loadMap() {
+    // ...
+  }
+
+  render() {
+    // ...
   }
 }
-
-export default Map
