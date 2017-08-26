@@ -25,6 +25,7 @@ export class MapContainer extends React.Component {
           }}
           zoom={13}
           onClick={this.onMapClicked}
+          clickableIcons={false}
         >
         </Map>
       </div>
@@ -33,5 +34,6 @@ export class MapContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: (GAPI_KEY)
+  apiKey: (GAPI_KEY),
+  version: '3'
 })(MapContainer)
