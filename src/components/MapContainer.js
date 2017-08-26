@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // Google-Maps-React
 import { Map, InfoWindow, Marker, GoogleApiWrapper } from 'google-maps-react';
 
-const GAPI_KEY = process.env.GOOGLE_MAPS_API;
+const GAPI_KEY = process.env.REACT_APP_GOOGLE_MAPS_API;
 
 export class MapContainer extends React.Component {
   render() {
