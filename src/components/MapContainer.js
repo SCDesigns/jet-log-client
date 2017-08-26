@@ -18,6 +18,7 @@ export class MapContainer extends React.Component {
     return (
       <div style={style}>
         <Map
+          key={GAPI_KEY}
           google={this.props.google}
           initialCenter={{
             lat: 22.277446,
