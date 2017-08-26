@@ -8,8 +8,9 @@ import IconButton from 'material-ui/IconButton';
 // Material-UI - Icons
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 // Material-UI - Colors
+import {amber300} from 'material-ui/styles/colors';
 import {red400} from 'material-ui/styles/colors';
-import {tealA700} from 'material-ui/styles/colors';
+import {blueGrey800} from 'material-ui/styles/colors';
 // Route Manager
 import PublicRoutes from '../containers/PublicRoutes';
 import RouteManager from './RouteManager';
@@ -30,8 +31,8 @@ class Header extends Component {
       <div>
         <AppBar
           title='JetLog'
-          style={{backgroundColor: tealA700}}
-          titleStyle={{fontSize: '30px'}}
+          style={{backgroundColor: blueGrey800}}
+          titleStyle={{fontSize: '30px', color: amber300}}
           onLeftIconButtonTouchTap={this.handleToggle}
         />
         <Drawer open={this.state.open} width={350}>
@@ -39,14 +40,14 @@ class Header extends Component {
           <IconButton tooltip="Close">
             <NavigationClose
               onTouchTap={this.handleToggle}
-              color={tealA700}
+              color={blueGrey800}
               hoverColor={red400}
             />
           </IconButton>
 
           <Avatar />
 
-          <Divider style={{backgroundColor: tealA700, height: '10px'}} />
+          <Divider style={{backgroundColor: blueGrey800, height: '10px'}} />
 
           <Switch>
             <Route exact path="/" component={ PublicRoutes } />

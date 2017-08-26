@@ -9,7 +9,7 @@ import List from 'material-ui/svg-icons/action/list';
 import NewLog from 'material-ui/svg-icons/communication/location-on';
 // Colors
 import {amber300} from 'material-ui/styles/colors';
-import {tealA700} from 'material-ui/styles/colors';
+import {blueGrey800} from 'material-ui/styles/colors';
 // Private Routes
 import AddLog from './AddLog'
 import Logs from '../views/Logs/Logs'
@@ -34,7 +34,7 @@ class AuthRouteValidator extends Component {
 					leftIcon={<List hoverColor={amber300}/>}
 				/></Link>
 
-				<Divider style={{backgroundColor: tealA700, height: '10px'}} />
+				<Divider style={{backgroundColor: blueGrey800, height: '10px'}} />
 
 				<Switch>
 	        <Route exact path="/new-log" component={AddLog} />

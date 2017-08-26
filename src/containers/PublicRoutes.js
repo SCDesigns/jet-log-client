@@ -9,7 +9,7 @@ import HomeIcon from 'material-ui/svg-icons/action/home';
 import PersonAdd from 'material-ui/svg-icons/social/person-add';
 // Colors
 import {amber300} from 'material-ui/styles/colors';
-import {tealA700} from 'material-ui/styles/colors';
+import {blueGrey800} from 'material-ui/styles/colors';
 // Public Routes
 import Home from '../views/Home';
 import Login from '../views/Login';
@@ -27,7 +27,7 @@ class AuthRouteValidator extends Component {
           leftIcon={<HomeIcon hoverColor={amber300}/>}
         /></Link>
 
-				<Divider style={{backgroundColor: tealA700, height: '10px'}} />
+				<Divider style={{backgroundColor: blueGrey800, height: '10px'}} />
 
 				<Switch>
 					<Route exact path="/" component={Home} />

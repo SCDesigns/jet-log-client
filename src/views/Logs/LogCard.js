@@ -1,7 +1,7 @@
 import React from 'react'
 // Material-UI
 import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import {tealA700} from 'material-ui/styles/colors';
+import {blueGrey800} from 'material-ui/styles/colors';
 
 const LogCard = ({ log }) => (
   <div key={log.id}>
@@ -12,7 +12,7 @@ const LogCard = ({ log }) => (
         avatar={log.memory}
         actAsExpander={true}
         showExpandableButton={true}
-        iconStyle={{color: tealA700}}
+        iconStyle={{color: blueGrey800}}
       />
 
       <CardMedia
