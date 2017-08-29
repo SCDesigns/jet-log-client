@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 import LogCard from './LogCard'
 import { getLogs } from '../../redux/modules/Logs/actions';
 
-import RaisedButton from 'material-ui/RaisedButton';
-
-import {amber300} from 'material-ui/styles/colors';
-import {red400} from 'material-ui/styles/colors';
-
 
 class Logs extends Component {
 

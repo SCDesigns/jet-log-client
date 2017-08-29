@@ -7,7 +7,6 @@ import thunk from 'redux-thunk';
 // Reducers
 import authReducer from '../modules/Auth/reducer'
 import logsReducer from '../modules/Logs/reducer'
-// import headerReducer from '../modules/Header/reducer'
 
 const reducers = combineReducers({
   user: authReducer,

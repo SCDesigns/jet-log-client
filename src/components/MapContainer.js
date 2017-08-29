@@ -24,7 +24,7 @@ export class MapContainer extends React.Component {
             lat: 22.277446,
             lng: 114.174900
           }}
-          zoom={13}
+          zoom={15}
           onClick={this.onMapClicked}
           clickableIcons={false}
         >

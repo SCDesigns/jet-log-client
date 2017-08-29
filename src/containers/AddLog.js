@@ -7,6 +7,8 @@ import {amber300} from 'material-ui/styles/colors';
 // Redux Actions
 import { createLog } from '../redux/modules/Logs/actions'
 
+import Location from './Location'
+
 const styles = {
   underlineStyle: {
     borderColor: amber300,
@@ -48,52 +50,65 @@ class AddLog extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleOnSubmit} className="center">
-        <h2>New Log</h2>
-        <label htmlFor="log_title" className="block">Title</label>
-        <TextField
-          type="text"
-          name="title"
-          value={this.state.title}
-          onChange={this.handleOnChange}
-          hintText="eg: How To Hong Kong"
-          underlineFocusStyle={styles.underlineStyle}
-        />
+      <div>
+        <Location />
+        <form onSubmit={this.handleOnSubmit} className="center">
+          <h2>New Log</h2>
+          <label htmlFor="log_title" className="block">Title</label>
+          <TextField
+            type="text"
+            name="title"
+            value={this.state.title}
+            onChange={this.handleOnChange}
+            hintText="eg: How To Hong Kong"
+            underlineFocusStyle={styles.underlineStyle}
+          />
 
-        <label htmlFor="log_description" className="block">Description</label>
-        <TextField
-          type="text"
-          name="description"
-          value={this.state.description}
-          onChange={this.handleOnChange}
-          hintText="eg: What an amazing few days..."
-          underlineFocusStyle={styles.underlineStyle}
-          multiLine={true}
-        />
+          <label htmlFor="log_description" className="block">Description</label>
+          <TextField
+            type="text"
+            name="description"
+            value={this.state.description}
+            onChange={this.handleOnChange}
+            hintText="eg: What an amazing few days..."
+            underlineFocusStyle={styles.underlineStyle}
+            multiLine={true}
+          />
 
-        <label htmlFor="log_location" className="block">Location</label>
-        <TextField
-          type="text"
-          name="location"
-          value={this.state.location}
-          onChange={this.handleOnChange}
-          hintText="eg: Hong Kong, China"
-          underlineFocusStyle={styles.underlineStyle}
-        />
+          <label htmlFor="log_location" className="block">Location</label>
+          <TextField
+            type="text"
+            name="location"
+            value={this.state.location}
+            onChange={this.handleOnChange}
+            hintText="eg: Hong Kong, China"
+            underlineFocusStyle={styles.underlineStyle}
+          />
 
-        <label htmlFor="log_location" className="block">Image URL</label>
-        <TextField
-          type="text"
-          name="memory"
-          value={this.state.memory}
-          onChange={this.handleOnChange}
-          hintText="eg: http://somesite/images/hong-kong.jpg"
-          underlineFocusStyle={styles.underlineStyle}
-          multiLine={true}
-        />
+          <label htmlFor="log_location" className="block">Coordinates</label>
+          <TextField
+            type="text"
+            name="coordinates"
+            value={this.state.coordinates}
+            onChange={this.handleOnChange}
+            hintText="eg: 22.396428, 114.109497"
+            underlineFocusStyle={styles.underlineStyle}
+          />
 
-        <RaisedButton label="Create New Log" type="submit" className="block"/>
-      </form>
+          <label htmlFor="log_location" className="block">Image URL</label>
+          <TextField
+            type="text"
+            name="memory"
+            value={this.state.memory}
+            onChange={this.handleOnChange}
+            hintText="eg: http://somesite/images/hong-kong.jpg"
+            underlineFocusStyle={styles.underlineStyle}
+            multiLine={true}
+          />
+
+          <RaisedButton label="Create New Log" type="submit" className="block"/>
+        </form>
+      </div>
     )
   }
 }
