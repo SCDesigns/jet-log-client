@@ -88,7 +88,7 @@ export class Location extends React.Component {
         border: 'none',
         width: '100%',
         'overflow-y': 'scroll',
-        height: '100px',
+        paddingBottom: '0px', 
       },
       autocompleteItem: {
         backgroundColor: '#ffffff',
