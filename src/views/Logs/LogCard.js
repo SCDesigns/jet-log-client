@@ -1,4 +1,5 @@
 import React from 'react'
+import Like from './Like'
 // Material-UI
 import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {blueGrey800} from 'material-ui/styles/colors';
@@ -25,6 +26,8 @@ const LogCard = ({ log }) => (
       <CardText expandable={true}>
         <p>{log.description}</p>
       </CardText>
+
+      <Like />
 
     </Card>
   </div>
