@@ -61,7 +61,7 @@ export const createLog = (log) => {
     .then(log => {
       dispatch(addLog(log));
       dispatch(reset('new-log'));
-      
+
     })
     .catch(err => {
       throw new SubmissionError(err)

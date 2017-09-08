@@ -1,5 +1,5 @@
 import React from 'react'
-import Like from './Like'
+import Likes from './Likes'
 // Material-UI
 import {Card, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import {blueGrey800} from 'material-ui/styles/colors';
@@ -27,7 +27,7 @@ const LogCard = ({ log }) => (
         <p>{log.description}</p>
       </CardText>
 
-      <Like />
+      <Likes />
 
     </Card>
   </div>
