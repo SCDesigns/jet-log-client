@@ -7,8 +7,6 @@ import {amber300} from 'material-ui/styles/colors';
 // Redux Actions
 import { createLog } from '../redux/modules/Logs/actions'
 
-import Location from './Location'
-
 const styles = {
   underlineStyle: {
     borderColor: amber300,
@@ -51,7 +49,6 @@ class AddLog extends Component {
   render() {
     return (
       <div>
-        <Location />
         <form onSubmit={this.handleOnSubmit} className="center">
           <h2>New Log</h2>
           <label htmlFor="log_title" className="block">Title</label>
