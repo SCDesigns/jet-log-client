@@ -8,11 +8,13 @@ import thunk from 'redux-thunk';
 import authReducer from '../modules/Auth/reducer'
 import logsReducer from '../modules/Logs/reducer'
 import likesReducer from '../modules/Likes/reducer'
+// import markersReducer from '../modules/Likes/reducer'
 
 const reducers = combineReducers({
   user: authReducer,
   logs: logsReducer,
   likes: likesReducer,
+  // markers: markersReducer,
 });
 
 const middleware = [thunk];

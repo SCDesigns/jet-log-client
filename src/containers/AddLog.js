@@ -21,6 +21,8 @@ class AddLog extends Component {
       title: '',
       description: '',
       location: '',
+      latitude: '',
+      longitude: '',
       memory: '',
     }
     this.handleOnChange = this.handleOnChange.bind(this)
@@ -42,6 +44,8 @@ class AddLog extends Component {
       title: '',
       description: '',
       location: '',
+      latitude: '',
+      longitude: '',
       memory: '',
     })
   }
@@ -84,11 +88,21 @@ class AddLog extends Component {
 
           <label htmlFor="log_location" className="block">Coordinates</label>
           <TextField
-            type="text"
-            name="coordinates"
-            value={this.state.coordinates}
+            type="number"
+            step="any"
+            name="latitude"
+            value={this.state.latitude}
             onChange={this.handleOnChange}
-            hintText="eg: 22.396428, 114.109497"
+            hintText="eg: 22.396428"
+            underlineFocusStyle={styles.underlineStyle}
+          />
+          <TextField
+            type="number"
+            step="any"
+            name="longitude"
+            value={this.state.longitude}
+            onChange={this.handleOnChange}
+            hintText="eg: 114.109497"
             underlineFocusStyle={styles.underlineStyle}
           />
 

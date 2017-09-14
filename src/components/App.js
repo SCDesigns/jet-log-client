@@ -5,7 +5,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import '../App.css';
 // Component Imports
 import Header from './Header'
-import MapContainer from './MapContainer'
+import Map from '../containers/Map'
 
 class App extends Component {
 
@@ -14,7 +14,7 @@ class App extends Component {
       <MuiThemeProvider muiTheme={getMuiTheme()}>
         <div className="App">
             <Header />
-            <MapContainer />
+            <Map />
         </div>
       </MuiThemeProvider>
     );
