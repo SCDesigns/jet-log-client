@@ -37,7 +37,7 @@ const Map = compose(
     {props.markers.map(marker => (
       <Marker
         key={marker.id}
-        position={{ lat: marker.latitude, lng: marker.longitude }}
+        position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
       />
     ))}
   </GoogleMap>

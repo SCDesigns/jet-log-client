@@ -3,7 +3,9 @@ import { connect } from 'react-redux';
 // Material-UI
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import NumberInput from 'material-ui-number-input';
 import {amber300} from 'material-ui/styles/colors';
+import {blueGrey800} from 'material-ui/styles/colors';
 // Redux Actions
 import { createLog } from '../redux/modules/Logs/actions'
 
@@ -87,25 +89,18 @@ class AddLog extends Component {
           />
 
           <label htmlFor="log_location" className="block">Coordinates</label>
-          <TextField
+          <input
             type="number"
-            step="any"
             name="latitude"
             value={this.state.latitude}
             onChange={this.handleOnChange}
-            hintText="eg: 22.396428"
-            underlineFocusStyle={styles.underlineStyle}
-          />
-          <TextField
+          ></input>
+          <input
             type="number"
-            step="any"
             name="longitude"
             value={this.state.longitude}
             onChange={this.handleOnChange}
-            hintText="eg: 114.109497"
-            underlineFocusStyle={styles.underlineStyle}
-          />
-
+          ></input>
           <label htmlFor="log_location" className="block">Image URL</label>
           <TextField
             type="text"

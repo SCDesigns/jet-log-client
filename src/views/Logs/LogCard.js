@@ -9,6 +9,7 @@ const LogCard = ({ log }) => (
     <Card>
 
       <CardHeader
+        key={log.id}
         title={log.title}
         avatar={log.memory}
         actAsExpander={true}

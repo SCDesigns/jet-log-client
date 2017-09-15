@@ -15,8 +15,8 @@ class Logs extends Component {
     return (
       <div>
         <h1 className="center">My Logs</h1>
-        {this.props.logs.map(log =>
-          <LogCard key={log.id} log={log} />
+        {this.props.logs.map((log, index) =>
+          <LogCard key={index} log={log} />
         )}
       </div>
     );
