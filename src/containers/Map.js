@@ -1,13 +1,24 @@
-/* global google */
+/* eslint-disable no-undef */
 import React from 'react';
 
-import { compose, withProps, lifecycle } from 'recompose';
+import { compose, withProps, lifecycle, withStateHandlers } from 'recompose';
 import { withGoogleMap, GoogleMap, InfoWindow, Marker } from 'react-google-maps';
 import withScriptjs from 'react-google-maps/lib/async/withScriptjs';
+
+import LogCard from '../views/Logs/LogCard'
+
+import logMark from '../assets/marker.svg'
 
 const API_URL = process.env.REACT_APP_API_URL;
 
 const Map = compose(
+  withStateHandlers(() => ({
+     isOpen: false,
+  }), {
+  onToggleOpen: ({ isOpen }) => () => ({
+       isOpen: !isOpen,
+    })
+  }),
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDZI_bR9KifKkXs8XtgTbMHfz2FZ5HLcY8",
     loadingElement: <div style={{ height: `100%` }} />,
@@ -34,12 +45,18 @@ const Map = compose(
     defaultZoom={3}
     defaultCenter={{ lat: 25.0391667, lng: 121.525 }}
   >
-    {props.markers.map(marker => (
-      <Marker
-        key={marker.id}
-        position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
-      />
-    ))}
+  {props.markers.map(marker => (
+    <Marker
+      icon={logMark}
+      key={marker.id}
+      position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
+      onClick={props.onToggleOpen}
+    >
+      {props.isOpen && <InfoWindow onClick={props.onToggleOpen} >
+        <LogCard key={marker.id} log={marker} />
+      </InfoWindow>}
+    </Marker>
+  ))}
   </GoogleMap>
 );
 
