@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 // Material-UI
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
-import NumberInput from 'material-ui-number-input';
 import {amber300} from 'material-ui/styles/colors';
-import {blueGrey800} from 'material-ui/styles/colors';
 // Redux Actions
 import { createLog } from '../redux/modules/Logs/actions'
 
