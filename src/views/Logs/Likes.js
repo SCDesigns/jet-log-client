@@ -4,19 +4,18 @@ import { increment } from '../../redux/modules/Likes/actions'
 
 class Likes extends React.Component {
 
+  handleIncrement = () => {
+    this.props.increment(this.props.logId)
+  }
+
   render(){
     return (
       <div>
-        <button onClick={this.props.increment}>{this.props.likes}</button>
+        <button onClick={this.handleIncrement}>{this.props.likes}</button>
       </div>
     )
   }
 }
 
-function mapStateToProps(state){
-  return {
-    likes: state.likes
-  }
-}
 
-export default connect(mapStateToProps, { increment })(Likes)
+export default connect(null, { increment })(Likes)

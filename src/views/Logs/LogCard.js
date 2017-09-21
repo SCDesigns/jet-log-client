@@ -28,7 +28,7 @@ const LogCard = ({ log }) => (
         <p>{log.description}</p>
       </CardText>
 
-      <Likes />
+      <Likes logId={log.id} likes={log.likes}/>
 
     </Card>
   </div>

@@ -10,6 +10,16 @@ const logsReducer = (state = [], action) => {
         ...state.filter(log => log.id !== action.log.id),
         Object.assign({}, action.log)
       ]
+    case 'INCREMENT_LIKE':
+      return state.map(log => {
+          if (log.id === action.payload) {
+            log.likes += 1;
+            return log
+          } else {
+            return log
+          }
+      })
+
     case 'DELETE_LOG_SUCCESS':
       return state.filter(log => log.id !== action.id);
     default:
