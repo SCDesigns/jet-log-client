@@ -22,8 +22,7 @@ class Logs extends Component {
       <div>
         <h1 className="center">My Logs</h1>
         {logList.sort((a,b) => {
-          console.log(a)
-          return a.props.log.likes - b.props.log.likes
+          return b.props.log.likes - a.props.log.likes
         })}
       </div>
     );
