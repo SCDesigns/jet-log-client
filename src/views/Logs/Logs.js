@@ -12,12 +12,19 @@ class Logs extends Component {
   }
 
   render() {
+
+    const logList = this.props.logs.map((log, index) =>
+      <LogCard key={index} log={log} />
+    )
+    console.log(logList)
+
     return (
       <div>
         <h1 className="center">My Logs</h1>
-        {this.props.logs.map((log, index) =>
-          <LogCard key={index} log={log} />
-        )}
+        {logList.sort((a,b) => {
+          console.log(a)
+          return a.props.log.likes - b.props.log.likes
+        })}
       </div>
     );
   }

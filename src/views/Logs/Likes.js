@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { increment } from '../../redux/modules/Likes/actions'
+import { incrementLikes } from '../../redux/modules/Logs/actions'
 
 class Likes extends React.Component {
 
   handleIncrement = () => {
-    this.props.increment(this.props.logId)
+    incrementLikes(this.props.log)
+    this.setState({
+      likes: this.props.likes,
+    })
   }
 
   render(){
@@ -17,5 +20,4 @@ class Likes extends React.Component {
   }
 }
 
-
-export default connect(null, { increment })(Likes)
+export default connect(null, { incrementLikes })(Likes)
