@@ -16,7 +16,6 @@ class Logs extends Component {
     const logList = this.props.logs.map((log, index) =>
       <LogCard key={index} log={log} />
     )
-    console.log(logList)
 
     return (
       <div>

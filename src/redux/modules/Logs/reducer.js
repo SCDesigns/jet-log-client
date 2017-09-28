@@ -6,11 +6,19 @@ const logsReducer = (state = [], action) => {
       let log = Object.assign({}, action.payload)
       return state.concat(log);
     case 'UPDATE_LOG_SUCCESS':
-      return [
-        ...state.slice(0, log.id),
-        {...state[log.id], likes: state[log.id].likes + 1},
-        ...state.slice(log.id + 1),
-      ];
+      const newState = state.map(l => {
+        if (l.id === action.payload.id) {
+          return action.payload
+        } else {
+          return l
+        }
+      })
+      return newState
+      // return [
+      //   ...state.slice(0, log.id),
+      //   {...state[log.id], likes: state[log.id].likes + 1},
+      //   ...state.slice(log.id + 1),
+      // ];
     case 'DELETE_LOG_SUCCESS':
       return state.filter(log => log.id !== action.id);
     case 'INCREMENT_LIKE':

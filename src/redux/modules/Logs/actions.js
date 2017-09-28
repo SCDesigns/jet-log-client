@@ -24,7 +24,7 @@ const addLog = log => {
 const updateLog = log => {
   return {
     type: 'UPDATE_LOG_SUCCESS',
-    payload: log.id
+    payload: log
   }
 }
 
@@ -35,7 +35,7 @@ const destroyLog = id => {
   }
 }
 
-const increment = logId => {
+const addLogLike = logId => {
   return {
     type: 'INCREMENT_LIKE',
     payload: logId
@@ -110,24 +110,22 @@ export const deleteLog = (log, history) => {
 }
 
 export const incrementLikes = (log) => {
-  log.likes++;
-  return fetch(`${API_URL}/logs/${log.id}`, {
-    method: "PATCH",
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify (
-      {
-        "log": { "likes": `${log.likes}` }
-      }
-    )
-  })
   // Trouble dispatching / when removed the update posts to the api when added nothing happens
-  // return dispatch => {
-  //   .then(log => {
-  //     dispatch(destroyLog(log.id))
-  //     history.push('/my-logs')
-  //   })
-  // }
+  return dispatch => {
+    const updatedLikes = log.likes + 1
+    return fetch(`${API_URL}/logs/${log.id}`, {
+      method: "PATCH",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify (
+        {
+          "log": { "likes": `${updatedLikes}` }
+        }
+      )
+    })
+    .then(response => response.json())
+    .then(log => dispatch(updateLog(log)))
+  }
 }

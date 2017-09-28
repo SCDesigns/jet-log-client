@@ -5,10 +5,8 @@ import { incrementLikes } from '../../redux/modules/Logs/actions'
 class Likes extends React.Component {
 
   handleIncrement = () => {
-    incrementLikes(this.props.log)
-    this.setState({
-      likes: this.props.likes,
-    })
+    this.props.incrementLikes(this.props.log)
+
   }
 
   render(){
