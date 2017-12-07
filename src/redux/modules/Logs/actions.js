@@ -35,13 +35,6 @@ const destroyLog = id => {
   }
 }
 
-const addLogLike = logId => {
-  return {
-    type: 'INCREMENT_LIKE',
-    payload: logId
-  }
-}
-
 // ** Async Actions **
 
 export const getLogs = () => {
@@ -49,9 +42,10 @@ export const getLogs = () => {
     return fetch(`${API_URL}/logs`)
     .then(response => response.json())
     .then(logs => dispatch(setLogs(logs)))
-    .catch(err => {
-      throw new SubmissionError(err)
-    })
+    .catch((err) => {
+     console.log(err)
+     throw new SubmissionError(err)
+   })
   }
 }
 
@@ -70,9 +64,10 @@ export const createLog = (log) => {
       dispatch(reset('new-log'));
 
     })
-    .catch(err => {
-      throw new SubmissionError(err)
-    })
+    .catch((err) => {
+     console.log(err)
+     throw new SubmissionError(err)
+   })
   }
 }
 
@@ -91,9 +86,10 @@ export const editLog = (log, history) => {
       dispatch(reset('new-log'))
       history.push('/my-logs')
     })
-    .catch(err => {
-      throw new SubmissionError(err)
-    })
+    .catch((err) => {
+     console.log(err)
+     throw new SubmissionError(err)
+   })
   }
 }
 

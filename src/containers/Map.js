@@ -1,12 +1,12 @@
 /* eslint-disable no-undef */
 import React from 'react';
-
+// React-Google-Maps Imports
 import { compose, withProps, lifecycle, withStateHandlers } from 'recompose';
 import { withGoogleMap, GoogleMap, InfoWindow, Marker } from 'react-google-maps';
 import withScriptjs from 'react-google-maps/lib/async/withScriptjs';
-
+// LogCard
 import LogCard from '../views/Logs/LogCard'
-
+// Custom Marker
 import logMark from '../assets/marker.svg'
 
 const API_URL = process.env.REACT_APP_API_URL;
@@ -16,8 +16,8 @@ const Map = compose(
      isOpen: false,
   }), {
   onToggleOpen: ({ isOpen }) => () => ({
-       isOpen: !isOpen,
-    })
+     isOpen: !isOpen,
+  })
   }),
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDZI_bR9KifKkXs8XtgTbMHfz2FZ5HLcY8",
@@ -31,7 +31,6 @@ const Map = compose(
     componentWillMount() {
       this.setState({ markers: [] })
     },
-
     componentDidMount() {
       fetch(`${API_URL}/logs`)
         .then(res => res.json())

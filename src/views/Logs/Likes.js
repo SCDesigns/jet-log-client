@@ -6,7 +6,6 @@ class Likes extends React.Component {
 
   handleIncrement = () => {
     this.props.incrementLikes(this.props.log)
-
   }
 
   render(){

@@ -86,17 +86,19 @@ class AddLog extends Component {
             underlineFocusStyle={styles.underlineStyle}
           />
 
-          <label htmlFor="log_location" className="block">Coordinates</label>
+          <label htmlFor="log_location" className="block">Coordinates (Lat/Long)</label>
           <input
             type="number"
             name="latitude"
             value={this.state.latitude}
+            hintText="latitude"
             onChange={this.handleOnChange}
           ></input>
           <input
             type="number"
             name="longitude"
             value={this.state.longitude}
+            hintText="longitude"
             onChange={this.handleOnChange}
           ></input>
           <label htmlFor="log_location" className="block">Image URL</label>

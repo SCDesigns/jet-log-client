@@ -41,9 +41,10 @@ export const signup = (userDetails, history) => {
       dispatch(reset('signup'));
       history.push('/my-logs')
     })
-    .catch(err => {
-      throw new SubmissionError(err)
-    })
+    .catch((err) => {
+     console.log(err)
+     throw new SubmissionError(err)
+   })
   }
 }
 
@@ -65,8 +66,9 @@ export const login = (userDetails, history) => {
       dispatch(reset('login'));
       history.push('/my-logs')
     })
-    .catch(err => {
-      throw new SubmissionError(err)
-    })
+    .catch((err) => {
+     console.log(err)
+     throw new SubmissionError(err)
+   })
   }
 }

@@ -1,13 +1,17 @@
 const markersReducer = (state = [], action) => {
   switch(action.type) {
-    case 'GET_MARKERS_SUCCESS':
-      return action.markers;
-    case 'CREATE_MARKER_SUCCESS':
-      let marker = Object.assign({}, action.payload)
-      return state.concat(marker);
+    case 'TOGGLE_INFO_WINDOW':
+      const newState = state.map(marker => {
+        if (marker.id === action.payload.id) {
+          action.payload.isOpen = !this.state.isOpen;
+          return action.payload
+        } else {
+          return marker
+        }
+      })
     default:
       return state;
   }
 }
 
-export default logsReducer;
+export default markersReducer;
