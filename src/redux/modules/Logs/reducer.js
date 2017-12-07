@@ -13,7 +13,7 @@ const logsReducer = (state = [], action) => {
           return l
         }
       })
-      return newState
+      return newState;
     case 'DELETE_LOG_SUCCESS':
       return state.filter(log => log.id !== action.id);
     default:

@@ -24,6 +24,7 @@ class AddLog extends Component {
       latitude: '',
       longitude: '',
       memory: '',
+      likes: 0,
     }
     this.handleOnChange = this.handleOnChange.bind(this)
     this.handleOnSubmit = this.handleOnSubmit.bind(this)
@@ -47,6 +48,7 @@ class AddLog extends Component {
       latitude: '',
       longitude: '',
       memory: '',
+      likes: 0,
     })
   }
 
