@@ -54,6 +54,7 @@ export const createLog = (log) => {
     return fetch(`${API_URL}/logs`, {
       method: "POST",
       headers: {
+        'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ log: log })
