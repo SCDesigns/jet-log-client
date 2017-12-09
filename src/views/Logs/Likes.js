@@ -11,7 +11,7 @@ class Likes extends React.Component {
   render(){
     return (
       <div>
-        <button onClick={this.handleIncrement}>{this.props.likes}</button>
+        <button className="like" onClick={this.handleIncrement}>{this.props.likes}</button>
       </div>
     )
   }

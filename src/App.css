@@ -9,6 +9,17 @@
   display: block;
   margin: 10px;
 }
+.like {
+  margin: auto auto 10px 10px;
+}
+.like:before {
+  font: normal 16px;
+  content: '❤';
+  padding-right: 10px;
+}
+.like:hover::before {
+  color: red;
+}
 .text-field-style-fix {
   padding: 0px;
   position: relative;
