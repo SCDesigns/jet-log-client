@@ -1,4 +1,4 @@
-# JetLog
+# JetLog ![alt text](http://jet-log.herokuapp.com/static/media/marker.cfe43bf3.svg)
 ## A memory map for your travels - Log your treks across the globe with JetLog + Google Maps API.
 
 Below you will find some information on how to perform common tasks.<br>
