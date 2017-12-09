@@ -16,13 +16,13 @@ import Logs from '../views/Logs/Logs'
 
 class AuthRouteValidator extends Component {
 
-	componentDidMount(){
-    const loggedIn = this.props.user.isAuthenticated;
-		if(!loggedIn){
-			this.props.history.push('/login');
-			alert("You must be logged in to access this.")
-		}
-	}
+	// componentDidMount(){
+  //   const loggedIn = this.props.user.isAuthenticated;
+	// 	if(!loggedIn){
+	// 		this.props.history.push('/login');
+	// 		alert("You must be logged in to access this.")
+	// 	}
+	// }
 
 	render() {
 		return (

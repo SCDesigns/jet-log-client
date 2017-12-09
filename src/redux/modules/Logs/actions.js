@@ -62,12 +62,12 @@ export const createLog = (log) => {
     .then(response => response.json())
     .then(log => {
       dispatch(addLog(log));
-      dispatch(reset('new-log'))
+      dispatch(reset('new-log'));
     })
     .catch((err) => {
      console.log(err)
      throw new SubmissionError(err)
-   })
+    })
   }
 }
 

@@ -37,6 +37,15 @@ const Map = compose(
         .then(logs => {
           this.setState({ markers: logs });
         });
+    },
+    componentDidUpdate(prevProps, prevState) {
+      if(this.state.markers === prevState.markers){
+        fetch(`${API_URL}/logs`)
+          .then(res => res.json())
+          .then(logs => {
+           this.setState({ markers: logs });
+         })
+      }
     }
   })
 )(props =>
