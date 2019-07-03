@@ -2,9 +2,8 @@
 import React from 'react';
 // React-Google-Maps Imports
 import { compose, withProps, lifecycle, withStateHandlers } from 'recompose';
-import { withGoogleMap, GoogleMap, InfoWindow, withHandlers } from 'react-google-maps';
+import { withGoogleMap, GoogleMap, InfoWindow, Marker } from 'react-google-maps';
 import withScriptjs from 'react-google-maps/lib/async/withScriptjs';
-import LogMarker from './../components/LogMarker'
 // LogCard
 import LogCard from '../views/Logs/LogCard'
 // Custom Marker
@@ -13,19 +12,14 @@ import logMark from '../assets/marker.svg'
 const API_URL = process.env.REACT_APP_API_URL;
 
 const Map = compose(
-  withState(
+  withStateHandlers(() => ({
      test: "testing",
-  withHandlers(() => {
-    return {
-      onToggleOpen: (e) => {
-        debugger
-      }
-    }
-  }), /*{
-  // onToggleOpen: (thing) => {
-  //   debugger
-  // }
-  // }), */
+     isOpen: {},
+  }), {
+  onToggleOpen: ({ isOpen }) => () => ({
+     isOpen: !isOpen,
+  })
+  }),
   withProps({
     googleMapURL: "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDZI_bR9KifKkXs8XtgTbMHfz2FZ5HLcY8",
     loadingElement: <div style={{ height: `100%` }} />,
@@ -62,17 +56,16 @@ const Map = compose(
   >
   {props.test}
   {props.markers.map(marker => (
-    <LogMarker
-      log={marker}
+    <Marker
       icon={logMark}
       key={marker.id}
       position={{ lat: parseFloat(marker.latitude), lng: parseFloat(marker.longitude) }}
-      onClick={(props) => {debugger}}
+      onClick={props.onToggleOpen}
     >
       {props.isOpen && <InfoWindow onClick={props.onToggleOpen} >
         <LogCard key={marker.id} log={marker} />
       </InfoWindow>}
-    </LogMarker>
+    </Marker>
   ))}
   </GoogleMap>
 );
