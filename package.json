@@ -24,7 +24,7 @@
     "selenium-standalone-painful": "^2.39.0-2.7.0"
   },
   "devDependencies": {
-    "react-scripts": "1.0.10"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
